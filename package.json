@@ -1,0 +1,25 @@
+{
+  "name": "lista-telefonica",
+  "version": "1.0.0",
+  "description": "A simple phone list created in nodejs and express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterF521/phone-list-js.git"
+  },
+  "author": "PeterF521",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeterF521/phone-list-js/issues"
+  },
+  "homepage": "https://github.com/PeterF521/phone-list-js#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
+  }
+}
