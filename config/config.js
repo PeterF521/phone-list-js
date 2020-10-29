@@ -11,8 +11,8 @@ module.exports = () => {
     app.use(bodyParser.json())
 
     // App routes
-    require('../src/routes/pages')
-    require('../src/routes/routes')
+    require('../src/routes/pages')(app)
+    require('../src/routes/users')(app)
 
     return app
 }
