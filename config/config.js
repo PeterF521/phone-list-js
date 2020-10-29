@@ -12,7 +12,7 @@ module.exports = () => {
 
     // App routes
     require('../src/routes/pages')
-    require('../src/routes/routes')
+    require('../src/routes/users')
 
     return app
 }
