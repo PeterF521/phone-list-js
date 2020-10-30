@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const data = module.exports = {}
-const data_path = './users.json'
+const data_path = './src/data/users.json'
 
 data.save = (save) => {
     const dataContent = JSON.stringify(save)
