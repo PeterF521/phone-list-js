@@ -1,11 +1,11 @@
+const usersControllers = require('../controllers/usersControllers')
+
 module.exports = app => {
     app.route('/users')
-        .get()
-        .post()
+        .get(usersControllers.get)
+        .post(usersControllers.post)
 
     app.route('/users/:id')
-        .put()
-        .delete()
-
-    return app
+        .put(usersControllers.put)
+        .delete(usersControllers.delete)
 }
