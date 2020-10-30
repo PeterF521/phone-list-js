@@ -1,4 +1,4 @@
-module.export = app => {
+module.exports = app => {
     app.route('/users')
         .get()
         .post()
