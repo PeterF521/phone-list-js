@@ -1,5 +1,7 @@
+const pageControllers = require('../controllers/pageControllers')
+
 module.exports = app => {
-    app.get('/', (req, res) => res.send('Hello world!'))
+    app.get('/', pageControllers.get)
 
     return app
 }
