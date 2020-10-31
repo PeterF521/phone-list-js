@@ -1,3 +1,3 @@
 exports.get = (req, res) => {
-    res.send('Olá mundo')
+    res.render('layout')
 }
