@@ -1,0 +1,31 @@
+extends layout.pug
+
+mixin table(value)
+    tr
+        td= value.name
+        td= value.contacts
+
+block content
+    h1 Contact List JS
+    br
+    //-
+        div.user-form
+            form(action="/users" method="POST")
+                label(for="name-input") Name:
+                br
+                input(type="text", name="Name", id="name-input")
+                br
+                label(for="contacts-input") Contactos:
+                br
+                input(type="text", name="Contacts", id="contacts-input")
+                br
+                input(type="submit" value="Submit")
+        br
+    div.contacts-container
+        table 
+            tr
+                th Name
+                th Contacts
+            each value in users
+                +table(value)
+            
