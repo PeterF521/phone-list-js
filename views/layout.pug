@@ -2,5 +2,26 @@ doctype html
 html(lang='en')
     head
         meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/bootstrap-grid.min.css")
+        link(rel="stylesheet", href="/css/bootstrap-reboot.min.css")
     body
-        block content
+        header.navbar.navbar-dark.navbar-expand-sm.bg-dark
+            a.navbar-brand(href="/") Contact List Js
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#nav-links")
+                span.navbar-toggler-icon
+            .navbar-collapse.collapse#nav-links
+                ul.navbar-nav.text-center
+                    block links
+        
+        main.container
+            .row.justify-content-center
+                h1.my-sm-3 Contact List
+            block content
+
+        // Jquery and bootstrap scripts
+        script(src="/js/jquery.min.js")
+        script(src="/js/jquery.slim.min.js")
+        script(src="/js/bootstrap.min.js")
+        script(src="/js/bootstrap.bundle.min.js")
