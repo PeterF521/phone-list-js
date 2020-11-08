@@ -11,6 +11,7 @@ module.exports = () => {
     console.log(__dirname)
     app.set('view engine', 'pug')
     
+    app.use(bodyParser.urlencoded({extended: true}))
     app.use(bodyParser.json())
 
     // App routes
