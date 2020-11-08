@@ -9,3 +9,6 @@ package-lock.json
 
 # Data JSON file
 src/data/users.json
+
+# Public folder
+public/
