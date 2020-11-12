@@ -1,0 +1,22 @@
+extends layout.pug
+block links
+    li.nav-item
+        a.nav-link(href="/") Home
+    li.nav-item.active
+        a.nav-link(href="/newUser") New Contact
+    li.nav-item
+        a.nav-link(href="/") Delete Contact
+
+block content
+    form(action='/users', method='POST', novalidate).needs-validation
+        .row.justify-content-center
+            .form-group.col-lg-4
+                label(for='name') Name:
+                input.form-control(type='text', name='name', id='name', placeHolder='Name', required)
+                .invalid-feedback Name required
+            .form-group.col-lg-4
+                label(for='contact') Contacts:
+                input.form-control(type='text', ,id='contact', name='contacts', placeHolder='Contacts', required)
+                .invalid-feedback Contacts required
+        .row.justify-content-center#submit-container
+            button.form-control.btn.btn-primary.col-lg-4(type='submit') Submit

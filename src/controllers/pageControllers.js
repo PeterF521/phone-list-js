@@ -6,3 +6,10 @@ exports.get = (req, res) => {
         contacts: users.users
     })
 }
+
+exports.newUserPage = (req, res) => {
+    res.render('newUser', {
+        name: 'New User',
+        contacts: users.users
+    })
+}

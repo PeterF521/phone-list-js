@@ -17,7 +17,7 @@ html(lang='en')
         
         main.container
             .row.justify-content-center
-                h1.my-sm-3 Contact List
+                h1.my-sm-3=name || 'Contact List JS'
             block content
 
         // Jquery and bootstrap scripts
@@ -25,3 +25,4 @@ html(lang='en')
         script(src="/js/jquery.slim.min.js")
         script(src="/js/bootstrap.min.js")
         script(src="/js/bootstrap.bundle.min.js")
+        script(src="/js/script.js")
