@@ -4,16 +4,28 @@ const users = data.load()
 
 function checkBodyRequest(body) {
     if(body.name === undefined || body.contacts === undefined) {
-        const error = new TypeError('Body name or/and contacts must not be undefined')
+        const error = new Error('Body name or/and contacts must not be undefined')
         error.statusCode = 400
-        throw error
+        return error
     }
 
     if(!Array.isArray(body.contacts)) {
-        const error = new TypeError('Contacs must be an array')
-        error.statusCode = 400
-        throw error
+        const newData = handleFormData(body)
+        if(!newData) {
+            const err = new Error('Contacts must not be undefined!')
+            err.statusCode = 4000
+            return err
+        }
+        return newData
     }
+    return body.contacts
+}
+
+function handleFormData(body) {
+    const rule = /(\d{9})|([a-z]+[0-9]*)[@]([a-z]+)[.]([a-z]+)/gm
+    const contactsArray = body.contacts.match(rule)
+
+    return contactsArray
 }
 
 function getId() {
@@ -26,12 +38,12 @@ exports.get = (req, res) => {
 }
 
 exports.post = (req, res) => {
-    checkBodyRequest(req.body)
+    const newContacts = checkBodyRequest(req.body)
 
     const user = {
         id: getId(),
         name: req.body.name,
-        contacts: req.body.contacts
+        contacts: newContacts
     }
 
     users.users.push(user)
