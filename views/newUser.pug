@@ -8,7 +8,7 @@ block links
         a.nav-link(href="/") Delete Contact
 
 block content
-    form(action='/users', method='POST', novalidate).needs-validation
+    form(action='/newUser/submit', method='POST', novalidate).needs-validation
         .row.justify-content-center
             .form-group.col-lg-4
                 label(for='name') Name:
